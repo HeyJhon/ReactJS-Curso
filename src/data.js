@@ -1,6 +1,6 @@
 const data = [
     {
-    title:"Vue JS desde cero",
+    title:"Vue JS desde 0",
     image:"https://pm1.narvii.com/6303/75dec364d3e4740373016f1712650a12de7e8cf5_128.jpg", 
     imagecard:"https://ed-grid.com/assets/img/logo/edgrid-poster.jpg",
     price:"20USD",
