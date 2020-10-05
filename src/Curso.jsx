@@ -1,32 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
-const Curso = ({title, image, profesor,price,imagecard}) =>{
+const Curso = ({id,title, image, profesor,price,imagecard}) =>{
     return (
         <>
         <article className="card">
-  <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-    <img src={imagecard} alt=""/>
-  </div>
-  <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-    <h3 className="t5 s-mb-2 s-center">
-    {title}
-    </h3>
-    <div className="s-mb-2 s-main-center">
-      <div className="card__teacher s-cross-center">
-        <div className="card__avatar s-mr-1">
-          <div className="circle img-container">
-            <img src={image} alt={title}/>
+          <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+            <Link to={`/cursos/${id}`}>
+            <img src={imagecard} alt=""/>
+            </Link>
           </div>
+          <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+            <h3 className="t5 s-mb-2 s-center">
+            {title}
+            </h3>
+            <div className="s-mb-2 s-main-center">
+              <div className="card__teacher s-cross-center">
+                <div className="card__avatar s-mr-1">
+                  <div className="circle img-container">
+                    <img src={image} alt={title}/>
+                  </div>
+                </div>
+            <span className="small">{profesor}</span>
+              </div>
+            </div>
+            <div className="s-main-center">
+            <a className="button--ghost-alert button--tiny" href="#"> {'$'+price}</a>
+            </div>
         </div>
-    <span className="small">{profesor}</span>
-      </div>
-    </div>
-    <div className="s-main-center">
-    <a className="button--ghost-alert button--tiny" href="#"> {'$'+price}</a>
-    </div>
-  </div>
-</article>
+        </article>
         </>
     )
 }
